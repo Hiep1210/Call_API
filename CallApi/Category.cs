@@ -1,7 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace slot_4.Models
 {
@@ -10,9 +9,9 @@ namespace slot_4.Models
         public Category()
         {
         }
-        [JsonPropertyName("categoryId")]
+        [JsonProperty("categoryId")]
         public int CategoryId { get; set; }
-        [JsonPropertyName("surprise")]
+        [JsonProperty("surprise")]
         public string? CategoryName { get; set; }
 
         public override bool Equals(object? obj)

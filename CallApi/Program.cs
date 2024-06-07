@@ -7,6 +7,8 @@ namespace CallApi
         static async Task Main(string[] args)
         {
             Manager m = new Manager();
+            RestSharpMethod rest = new RestSharpMethod();
+            FlurlMethod flurl = new FlurlMethod();
             while(true)
             {
                 Console.WriteLine("1. Show List Category");
@@ -20,15 +22,20 @@ namespace CallApi
                 switch (option)
                 {
                     case 1:
-                        await m.ShowList();
+                        //await m.ShowList();
+                        await rest.ShowList();
+                        await flurl.ShowList();
                         break;
                     case 2:
                         Console.WriteLine("Enter Category's ID");
-                        await m.SearchAsync(Convert.ToInt32(Console.ReadLine()));
+                        //await m.SearchAsync(Convert.ToInt32(Console.ReadLine()));
+                        await flurl.Show(Convert.ToInt32(Console.ReadLine()));
                         break;
                     case 3:
                         Console.WriteLine("Enter category");
-                        await m.InsertAsync(new Category {CategoryName = Console.ReadLine() });
+                        //await m.InsertAsync(new Category {CategoryName = Console.ReadLine() });
+                        //await rest.Post(new Category {CategoryName = Console.ReadLine() });
+                        await flurl.Add(new Category { CategoryName = Console.ReadLine() });
                         break;
                     case 4:
                         break;

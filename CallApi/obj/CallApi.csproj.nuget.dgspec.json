@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Ki_8\\PRN231\\PRN231_Projs - Copy\\CallApi\\CallApi.csproj": {}
+    "D:\\Ki_8\\PRN231\\Call_API_Method\\CallApi\\CallApi.csproj": {}
   },
   "projects": {
-    "D:\\Ki_8\\PRN231\\PRN231_Projs - Copy\\CallApi\\CallApi.csproj": {
+    "D:\\Ki_8\\PRN231\\Call_API_Method\\CallApi\\CallApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Ki_8\\PRN231\\PRN231_Projs - Copy\\CallApi\\CallApi.csproj",
+        "projectUniqueName": "D:\\Ki_8\\PRN231\\Call_API_Method\\CallApi\\CallApi.csproj",
         "projectName": "CallApi",
-        "projectPath": "D:\\Ki_8\\PRN231\\PRN231_Projs - Copy\\CallApi\\CallApi.csproj",
+        "projectPath": "D:\\Ki_8\\PRN231\\Call_API_Method\\CallApi\\CallApi.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Ki_8\\PRN231\\PRN231_Projs - Copy\\CallApi\\obj\\",
+        "outputPath": "D:\\Ki_8\\PRN231\\Call_API_Method\\CallApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,28 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Flurl.Http": {
+              "target": "Package",
+              "version": "[4.0.2, )"
+            },
+            "Flurl.Http.Newtonsoft": {
+              "target": "Package",
+              "version": "[0.9.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[111.2.0, )"
+            },
+            "RestSharp.Serializers.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[111.2.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
