@@ -36,7 +36,7 @@ namespace CallApi
                 var serializer = new Flurl.Http.Newtonsoft.NewtonsoftJsonSerializer();
                 Category cat = await link.AppendPathSegments("Category", "id")
                     .WithSettings(s => s.JsonSerializer = serializer)
-                    .AppendQueryParam("id2", id)
+                    .AppendQueryParam("id", id)
                     .GetJsonAsync<Category>();
                 Display(cat);
             }
