@@ -9,12 +9,33 @@ namespace slot_4.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
-        private readonly MySaleDBContext _context = new MySaleDBContext();
+        private static List<Category> list = new List<Category>
+            {
+                new Category { CategoryId = 1, CategoryName = "Laptop" },
+                new Category { CategoryId = 2, CategoryName = "PC" },
+                new Category { CategoryId = 3, CategoryName = "Mobile" },
+                new Category { CategoryId = 4, CategoryName = "Tablet" },
+                new Category { CategoryId = 5, CategoryName = "PC" },
+                new Category { CategoryId = 6, CategoryName = "Laptop" },
+                new Category { CategoryId = 7, CategoryName = "Mobile" },
+                new Category { CategoryId = 8, CategoryName = "Tablet" },
+                new Category { CategoryId = 9, CategoryName = "Mobiler" },
+                new Category { CategoryId = 10, CategoryName = "string" },
+                new Category { CategoryId = 11, CategoryName = "newcat" },
+                new Category { CategoryId = 12, CategoryName = null },
+                new Category { CategoryId = 13, CategoryName = "abc" },
+                new Category { CategoryId = 14, CategoryName = "name" },
+                new Category { CategoryId = 15, CategoryName = "new name" }
+            };
+        public CategoryController()
+        {
+        }
+
 
         [HttpGet]
         public IActionResult Get()
         {
-            var categories = _context.Categories.ToList();
+            var categories = list.ToList();
             return Ok(categories);
 
         }
@@ -27,7 +48,7 @@ namespace slot_4.Controllers
         [HttpGet("id")]
         public IActionResult Get(int id)
         {
-            var category = _context.Categories.FirstOrDefault(s => s.CategoryId == id);
+            var category = list.FirstOrDefault(s => s.CategoryId == id);
             if (category == null) return NotFound("Product is not existed");
             return Ok(category);
 
@@ -36,11 +57,11 @@ namespace slot_4.Controllers
         [HttpPost]
         public IActionResult Post(Category cat)
         {
-            var c = _context.Categories.FirstOrDefault(s => s.CategoryName == cat.CategoryName);
+            var c = list.FirstOrDefault(s => s.CategoryName == cat.CategoryName);
             if (c != null) return BadRequest("Existed Category");
             if (cat.CategoryName == "") return BadRequest("Not Empty Name");
-            _context.Categories.Add(cat);
-            _context.SaveChanges();
+            cat.CategoryId = list.Count() + 1;
+            list.Add(cat);
             return Created("Created Successfully", cat);
         }
 
@@ -53,11 +74,10 @@ namespace slot_4.Controllers
         [HttpPut]
         public IActionResult Put(Category cat)
         {
-            var c = _context.Categories.FirstOrDefault(s => s.CategoryId == cat.CategoryId);
+            var c = list.FirstOrDefault(s => s.CategoryId == cat.CategoryId);
 
             if (c == null) return NotFound("No Matched Category");
             c.CategoryName = cat.CategoryName;
-            _context.SaveChanges();
             return Ok(c);
         }
 
@@ -70,14 +90,12 @@ namespace slot_4.Controllers
         [HttpDelete("id")]
         public IActionResult Delete(int id)
         {
-            var c = _context.Categories
-                .Include(p => p.Products)
+            var c = list
                 .FirstOrDefault(s => s.CategoryId == id);
 
             if (c == null) return NotFound("No Matched Delete Category");
             if (c.Products.Count > 0) return BadRequest("There's product existed in the category");
-            _context.Categories.Remove(c);
-            _context.SaveChanges();
+            list.Remove(c);
             return Ok(c);
         }
 

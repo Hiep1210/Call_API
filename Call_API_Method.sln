@@ -5,7 +5,7 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CallApi", "CallApi\CallApi.csproj", "{10C09905-0D64-4627-B951-08AD07E083C3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "slot-4", "..\..\..\semester8note\semester-8-fu\PRN231\code\SE1702-PRN231\slot-4\slot-4.csproj", "{8EC4C9C8-DA21-4DD1-ADD3-8171F46E1E0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "slot-4", "slot-4\slot-4.csproj", "{B86D20C8-61A0-4503-9982-88175010FFFB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{10C09905-0D64-4627-B951-08AD07E083C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10C09905-0D64-4627-B951-08AD07E083C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10C09905-0D64-4627-B951-08AD07E083C3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8EC4C9C8-DA21-4DD1-ADD3-8171F46E1E0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8EC4C9C8-DA21-4DD1-ADD3-8171F46E1E0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8EC4C9C8-DA21-4DD1-ADD3-8171F46E1E0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8EC4C9C8-DA21-4DD1-ADD3-8171F46E1E0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B86D20C8-61A0-4503-9982-88175010FFFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B86D20C8-61A0-4503-9982-88175010FFFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B86D20C8-61A0-4503-9982-88175010FFFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B86D20C8-61A0-4503-9982-88175010FFFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
