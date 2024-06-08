@@ -23,8 +23,8 @@ namespace CallApi
                 {
                     case 1:
                         //await m.ShowList();
-                        await rest.ShowList();
-                        //await flurl.ShowList();
+                        //await rest.ShowList();
+                        await flurl.ShowList();
                         break;
                     case 2:
                         Console.WriteLine("Enter Category's ID");
