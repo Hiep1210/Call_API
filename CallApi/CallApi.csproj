@@ -10,6 +10,9 @@
   <ItemGroup>
     <PackageReference Include="Flurl.Http" Version="4.0.2" />
     <PackageReference Include="Flurl.Http.Newtonsoft" Version="0.9.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Refit" Version="6.3.2" />
     <PackageReference Include="Refit.Newtonsoft.Json" Version="6.3.2" />
