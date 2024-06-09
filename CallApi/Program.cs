@@ -13,7 +13,7 @@ namespace CallApi
             ServiceStackMethod servicestack = new ServiceStackMethod();
             int id;
             string name;
-            while (true)
+            while(true)
             {
                 Console.WriteLine("1. Show List Category");
                 Console.WriteLine("2. Search");
@@ -33,8 +33,7 @@ namespace CallApi
                         await servicestack.getAllCategories();
                         break;
                     case 2:
-                        Console.WriteLine("Enter category");
-
+                        Console.WriteLine("Enter Category's ID");
                         //await m.SearchAsync(Convert.ToInt32(Console.ReadLine()));
                         //await flurl.Show(Convert.ToInt32(Console.ReadLine()));
                         await refit.GetCategory(Convert.ToInt32(Console.ReadLine()));
@@ -43,10 +42,10 @@ namespace CallApi
 
                         Console.Write("Enter category Name: ");
                         //await m.InsertAsync(new Category {CategoryName = Console.ReadLine() });
-                        await rest.Post(new Category { CategoryName = Console.ReadLine() });
+                        //await rest.Post(new Category {CategoryName = Console.ReadLine() });
                         //await flurl.Add(new Category { CategoryName = Console.ReadLine() });
                         //await refit.CreateCategory(new Category { CategoryName = Console.ReadLine() });
-                        //await servicestack.CreateCategory(new Category { CategoryName = Console.ReadLine() });
+                        await servicestack.CreateCategory(new Category { CategoryName = Console.ReadLine() });
                         break;
                     case 4:
                         Console.Write("Enter category id: ");
@@ -62,7 +61,7 @@ namespace CallApi
                         await refit.DeleteCategory(Convert.ToInt32(Console.ReadLine()));
                         break;
                     case 6:
-
+                       
                         break;
                     default:
                         Console.WriteLine("Nothing");
