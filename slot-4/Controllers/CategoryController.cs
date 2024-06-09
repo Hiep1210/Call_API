@@ -22,7 +22,7 @@ namespace slot_4.Controllers
                 new Category { CategoryId = 9, CategoryName = "Mobiler" },
                 new Category { CategoryId = 10, CategoryName = "string" },
                 new Category { CategoryId = 11, CategoryName = "newcat" },
-                new Category { CategoryId = 12, CategoryName = null },
+                new Category { CategoryId = 12, CategoryName = "asd" },
                 new Category { CategoryId = 13, CategoryName = "abc" },
                 new Category { CategoryId = 14, CategoryName = "name" },
                 new Category { CategoryId = 15, CategoryName = "new name" }
@@ -45,7 +45,7 @@ namespace slot_4.Controllers
 
 
         // Báo not found nếu không có
-        [HttpGet("id")]
+        [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
             var category = list.FirstOrDefault(s => s.CategoryId == id);
@@ -57,7 +57,7 @@ namespace slot_4.Controllers
         [HttpPost]
         public IActionResult Post(Category cat)
         {
-            var c = list.FirstOrDefault(s => s.CategoryName == cat.CategoryName);
+            var c = list.FirstOrDefault(s => s.CategoryName.Equals(cat.CategoryName));
             if (c != null) return BadRequest("Existed Category");
             if (cat.CategoryName == "") return BadRequest("Not Empty Name");
             cat.CategoryId = list.Count() + 1;
