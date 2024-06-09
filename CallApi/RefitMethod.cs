@@ -56,14 +56,16 @@ public class RefitMethod
             CategoryName = cateName
         };
         var mess = await CateData.UpdateCategory(cate);
-        Console.WriteLine(mess);
+        Category c = JsonConvert.DeserializeObject<Category>(mess);
+        Console.WriteLine(c);
 
     }
 
     public async Task DeleteCategory(int id)
     {
         var cate = await CateData.DeleteCategory(id);
-        Console.WriteLine(cate);
+        Category c = JsonConvert.DeserializeObject<Category>(cate);
+        Console.WriteLine(c);
     }
 
     private void Display(params Category[] categories)

@@ -14,7 +14,7 @@ namespace CallApi
 {
     internal class RestSharpMethod
     {
-        private static string link = "http://localhost:5000/api";
+        public static string link = "http://localhost:5000/api";
         internal async Task ShowList()
         {
             try
