@@ -1,6 +1,8 @@
 ﻿using Newtonsoft.Json;
 using ServiceStack;
+using ServiceStack.Text;
 using slot_4.Models;
+using System;
 
 namespace CallApi;
 
@@ -9,26 +11,29 @@ public class ServiceStackMethod
     private static readonly string link = "http://localhost:5000/api/Category";
     JsonServiceClient client;
     public ServiceStackMethod()
-    { 
+    {
+        JsConfig<Category>.RawSerializeFn = cate => JsonConvert.SerializeObject(cate);
+        JsConfig<Category>.RawDeserializeFn = json => JsonConvert.DeserializeObject<Category>(json);
         client = new JsonServiceClient(link);
+
     }
     public async Task getAllCategories()
     {
-        string response = await client.GetAsync<string>("");
-        Console.WriteLine(response);
+        List<Category> response = await client.GetAsync<List<Category>>("");
+        Display(response.ToArray());
 
     }
 
     public async Task GetCategory(int id)
     {
-        string response = await client.GetAsync<string>("/"+id);
-        Console.WriteLine(response);
+        List<Category> response = await client.GetAsync<List<Category>>("/" + id);
+        Display(response.ToArray());
     }
 
     public async Task CreateCategory(Category cate)
     {
-        string response = await client.PostAsync<string>("", cate);
-        Console.WriteLine(response);
+        Category response = await client.PostAsync<Category>("", cate);
+        Display(response);
     }
 
     public async Task UpdateCategory(int id, string cateName)
@@ -38,14 +43,22 @@ public class ServiceStackMethod
             CategoryId = id,
             CategoryName = cateName
         };
-        string response = await client.PutAsync<string>("", cate);
-        Console.WriteLine(response);
+        Category response = await client.PutAsync<Category>("", cate);
+        Display(response);
     }
 
     public async Task DeleteCategory(int id)
     {
-        string response = await client.DeleteAsync<string>("/"+id);
-        Console.WriteLine(response);
+        Category response = await client.DeleteAsync<Category>("/" + id);
+        Display(response);
+    }
+
+    private void Display(params Category[] categories)
+    {
+        foreach (var category in categories)
+        {
+            Console.WriteLine(category);
+        }
     }
 
 }

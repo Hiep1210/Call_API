@@ -15,9 +15,12 @@
           "Microsoft.Extensions.Http": "6.0.0",
           "Newtonsoft.Json": "13.0.3",
           "Refit": "6.3.2",
+          "Refit.Newtonsoft.Json": "6.3.2",
           "RestSharp": "111.2.0",
           "RestSharp.Serializers.NewtonsoftJson": "111.2.0",
-          "ServiceStack": "6.11.0"
+          "ServiceStack": "6.11.0",
+          "ServiceStack.HttpClient": "8.2.2",
+          "ServiceStack.Text": "8.2.2"
         },
         "runtime": {
           "CallApi.dll": {}
@@ -199,7 +202,7 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
           "Microsoft.Extensions.Logging.Abstractions": "6.0.0",
           "Microsoft.Extensions.Options": "6.0.0",
-          "System.Diagnostics.DiagnosticSource": "6.0.0"
+          "System.Diagnostics.DiagnosticSource": "8.0.0"
         }
       },
       "Microsoft.Extensions.Logging.Abstractions/6.0.0": {},
@@ -291,6 +294,18 @@
           }
         }
       },
+      "Refit.Newtonsoft.Json/6.3.2": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "Refit": "6.3.2"
+        },
+        "runtime": {
+          "lib/net6.0/Refit.Newtonsoft.Json.dll": {
+            "assemblyVersion": "6.3.0.0",
+            "fileVersion": "6.3.2.28196"
+          }
+        }
+      },
       "RestSharp/111.2.0": {
         "runtime": {
           "lib/net6.0/RestSharp.dll": {
@@ -313,10 +328,10 @@
       },
       "ServiceStack/6.11.0": {
         "dependencies": {
-          "ServiceStack.Client": "6.11.0",
+          "ServiceStack.Client": "8.2.2",
           "ServiceStack.Common": "6.11.0",
-          "ServiceStack.Interfaces": "6.11.0",
-          "ServiceStack.Text": "6.11.0"
+          "ServiceStack.Interfaces": "8.2.2",
+          "ServiceStack.Text": "8.2.2"
         },
         "runtime": {
           "lib/net6.0/ServiceStack.dll": {
@@ -325,23 +340,23 @@
           }
         }
       },
-      "ServiceStack.Client/6.11.0": {
+      "ServiceStack.Client/8.2.2": {
         "dependencies": {
           "Microsoft.Extensions.Http": "6.0.0",
-          "ServiceStack.Interfaces": "6.11.0",
-          "ServiceStack.Text": "6.11.0"
+          "ServiceStack.Interfaces": "8.2.2",
+          "ServiceStack.Text": "8.2.2"
         },
         "runtime": {
           "lib/net6.0/ServiceStack.Client.dll": {
             "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.11.0.0"
+            "fileVersion": "8.2.2.0"
           }
         }
       },
       "ServiceStack.Common/6.11.0": {
         "dependencies": {
-          "ServiceStack.Interfaces": "6.11.0",
-          "ServiceStack.Text": "6.11.0",
+          "ServiceStack.Interfaces": "8.2.2",
+          "ServiceStack.Text": "8.2.2",
           "System.Memory": "4.5.5"
         },
         "runtime": {
@@ -351,30 +366,49 @@
           }
         }
       },
-      "ServiceStack.Interfaces/6.11.0": {
+      "ServiceStack.HttpClient/8.2.2": {
+        "dependencies": {
+          "ServiceStack.Client": "8.2.2",
+          "ServiceStack.Interfaces": "8.2.2",
+          "ServiceStack.Text": "8.2.2"
+        },
         "runtime": {
-          "lib/net6.0/ServiceStack.Interfaces.dll": {
+          "lib/net6.0/ServiceStack.HttpClient.dll": {
             "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.11.0.0"
+            "fileVersion": "8.2.2.0"
           }
         }
       },
-      "ServiceStack.Text/6.11.0": {
+      "ServiceStack.Interfaces/8.2.2": {
+        "runtime": {
+          "lib/net6.0/ServiceStack.Interfaces.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "8.2.2.0"
+          }
+        }
+      },
+      "ServiceStack.Text/8.2.2": {
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
-          "System.Diagnostics.DiagnosticSource": "6.0.0",
+          "System.Diagnostics.DiagnosticSource": "8.0.0",
           "System.Memory": "4.5.5"
         },
         "runtime": {
           "lib/net6.0/ServiceStack.Text.dll": {
             "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.11.0.0"
+            "fileVersion": "8.2.2.0"
           }
         }
       },
-      "System.Diagnostics.DiagnosticSource/6.0.0": {
+      "System.Diagnostics.DiagnosticSource/8.0.0": {
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/System.Diagnostics.DiagnosticSource.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
         }
       },
       "System.Diagnostics.EventLog/6.0.0": {},
@@ -628,6 +662,13 @@
       "path": "refit/6.3.2",
       "hashPath": "refit.6.3.2.nupkg.sha512"
     },
+    "Refit.Newtonsoft.Json/6.3.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Rb2OFzaYmqb0HH7ei2aBi+P0sCzZHXFviV1vnOdTOFOTHchmMUpYUlJIceXm0H3QLReBcFpOPMmnsoYoxgkpOw==",
+      "path": "refit.newtonsoft.json/6.3.2",
+      "hashPath": "refit.newtonsoft.json.6.3.2.nupkg.sha512"
+    },
     "RestSharp/111.2.0": {
       "type": "package",
       "serviceable": true,
@@ -649,12 +690,12 @@
       "path": "servicestack/6.11.0",
       "hashPath": "servicestack.6.11.0.nupkg.sha512"
     },
-    "ServiceStack.Client/6.11.0": {
+    "ServiceStack.Client/8.2.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-sJZEYs3pcEFlN2VmuLOFXyIHhI0PXopHDJN6MT7qfWUdlGdBNC2bMpLGSdDWpbL1GIU20rhWIg+qN+ZIy1CZwA==",
-      "path": "servicestack.client/6.11.0",
-      "hashPath": "servicestack.client.6.11.0.nupkg.sha512"
+      "sha512": "sha512-4rw7tflnTxByCAMRX6B8Qcy3bxO6CGhKRa9L1HTnstTw1fZ0qVdK3RatkwX5dtzROjcpAJGu7jr2nuufG7axdw==",
+      "path": "servicestack.client/8.2.2",
+      "hashPath": "servicestack.client.8.2.2.nupkg.sha512"
     },
     "ServiceStack.Common/6.11.0": {
       "type": "package",
@@ -663,26 +704,33 @@
       "path": "servicestack.common/6.11.0",
       "hashPath": "servicestack.common.6.11.0.nupkg.sha512"
     },
-    "ServiceStack.Interfaces/6.11.0": {
+    "ServiceStack.HttpClient/8.2.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Hyypiz+zKld5rMiUyOb3S+YElCkhFEC+ISl/f6Iz3uhIROwPUReRO5ifkZJ6z77eUkzyEHmJxZhHxs4uiluT5w==",
-      "path": "servicestack.interfaces/6.11.0",
-      "hashPath": "servicestack.interfaces.6.11.0.nupkg.sha512"
+      "sha512": "sha512-MnbFaZTzc8Z3EpscM8Qm8g3Kk97/KTHPsnL4/CW6fMUxxQhU7S+d/XP1/BRIsK4TVuJrHGnO9CFEogEz97AWYg==",
+      "path": "servicestack.httpclient/8.2.2",
+      "hashPath": "servicestack.httpclient.8.2.2.nupkg.sha512"
     },
-    "ServiceStack.Text/6.11.0": {
+    "ServiceStack.Interfaces/8.2.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-LGPW32nrQ1uJEgErMlUSEe2R+qnSMDNKXkRnN1RPgVHMbiIejCzOziSDW3MlokN/wFqiKhjgCUWi99q6yGlkkg==",
-      "path": "servicestack.text/6.11.0",
-      "hashPath": "servicestack.text.6.11.0.nupkg.sha512"
+      "sha512": "sha512-KpQT8tH+d2dPksdGhuLdmBySsd8c8XInSsh6sgdZ/E74PBn/Yay4HBveWXfhiIN7asSXV32IjBw6FvHtWAtv0A==",
+      "path": "servicestack.interfaces/8.2.2",
+      "hashPath": "servicestack.interfaces.8.2.2.nupkg.sha512"
     },
-    "System.Diagnostics.DiagnosticSource/6.0.0": {
+    "ServiceStack.Text/8.2.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-frQDfv0rl209cKm1lnwTgFPzNigy2EKk1BS3uAvHvlBVKe5cymGyHO+Sj+NLv5VF/AhHsqPIUUwya5oV4CHMUw==",
-      "path": "system.diagnostics.diagnosticsource/6.0.0",
-      "hashPath": "system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512"
+      "sha512": "sha512-2WrX0g2eN6L4SnD8lwRhy3Gcopvs/4l9LHMed67fpfcjIr/WwHhBfKANQx1BL2YZN7t4zWikxOJYsUJI5PB1Aw==",
+      "path": "servicestack.text/8.2.2",
+      "hashPath": "servicestack.text.8.2.2.nupkg.sha512"
+    },
+    "System.Diagnostics.DiagnosticSource/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-c9xLpVz6PL9lp/djOWtk5KPDZq3cSYpmXoJQY524EOtuFl5z9ZtsotpsyrDW40U1DRnQSYvcPKEUV0X//u6gkQ==",
+      "path": "system.diagnostics.diagnosticsource/8.0.0",
+      "hashPath": "system.diagnostics.diagnosticsource.8.0.0.nupkg.sha512"
     },
     "System.Diagnostics.EventLog/6.0.0": {
       "type": "package",

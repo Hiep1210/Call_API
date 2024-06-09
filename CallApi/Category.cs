@@ -10,6 +10,7 @@ namespace slot_4.Models
         {
         }
         public int CategoryId { get; set; }
+        [JsonProperty("surprise")]
         public string? CategoryName { get; set; }
 
         public override bool Equals(object? obj)
