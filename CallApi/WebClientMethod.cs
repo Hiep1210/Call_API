@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using slot_4.Models;
+using static ServiceStack.Diagnostics.Events;
 
 namespace CallApi
 {
@@ -57,7 +58,6 @@ namespace CallApi
                     var data = JsonConvert.SerializeObject(c);
                     webClient.Headers[HttpRequestHeader.ContentType] = "application/json";
                     var response = await webClient.UploadStringTaskAsync(url, WebRequestMethods.Http.Put, data);
-
                     var categoryObjectAfterUpdated = JsonConvert.DeserializeObject<Category>(response);
                     Console.WriteLine("c. Category after updated");
                     Display(categoryObjectAfterUpdated);
