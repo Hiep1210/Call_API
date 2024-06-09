@@ -1,4 +1,5 @@
 is_global = true
+build_property.RefitInternalNamespace = CallApi
 build_property.TargetFramework = net6.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = 
@@ -8,6 +9,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CallApi
-build_property.ProjectDir = D:\Ki_8\PRN231\Call_API_Method\CallApi\
+build_property.ProjectDir = A:\PRN231_CallAPI\Call_API\CallApi\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

@@ -1,20 +1,109 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Ki_8\\PRN231\\Call_API_Method\\CallApi\\CallApi.csproj": {}
+    "A:\\PRN231_CallAPI\\Call_API\\CallApi\\CallApi.csproj": {}
   },
   "projects": {
-    "D:\\Ki_8\\PRN231\\Call_API_Method\\CallApi\\CallApi.csproj": {
+    "A:\\PRN231_CallAPI\\Call_API\\CallApi\\CallApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Ki_8\\PRN231\\Call_API_Method\\CallApi\\CallApi.csproj",
+        "projectUniqueName": "A:\\PRN231_CallAPI\\Call_API\\CallApi\\CallApi.csproj",
         "projectName": "CallApi",
-        "projectPath": "D:\\Ki_8\\PRN231\\Call_API_Method\\CallApi\\CallApi.csproj",
-        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Ki_8\\PRN231\\Call_API_Method\\CallApi\\obj\\",
+        "projectPath": "A:\\PRN231_CallAPI\\Call_API\\CallApi\\CallApi.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "A:\\PRN231_CallAPI\\Call_API\\CallApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "A:\\PRN231_CallAPI\\Call_API\\slot-4\\slot-4.csproj": {
+                "projectPath": "A:\\PRN231_CallAPI\\Call_API\\slot-4\\slot-4.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Flurl.Http": {
+              "target": "Package",
+              "version": "[4.0.2, )"
+            },
+            "Flurl.Http.Newtonsoft": {
+              "target": "Package",
+              "version": "[0.9.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Refit": {
+              "target": "Package",
+              "version": "[6.3.2, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[111.2.0, )"
+            },
+            "RestSharp.Serializers.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[111.2.0, )"
+            },
+            "ServiceStack": {
+              "target": "Package",
+              "version": "[6.11.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "A:\\PRN231_CallAPI\\Call_API\\slot-4\\slot-4.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "A:\\PRN231_CallAPI\\Call_API\\slot-4\\slot-4.csproj",
+        "projectName": "slot-4",
+        "projectPath": "A:\\PRN231_CallAPI\\Call_API\\slot-4\\slot-4.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "A:\\PRN231_CallAPI\\Call_API\\slot-4\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,25 +129,31 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Flurl.Http": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
-              "version": "[4.0.2, )"
+              "version": "[6.0.31, )"
             },
-            "Flurl.Http.Newtonsoft": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[0.9.1, )"
+              "version": "[6.0.30, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.30, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
             },
-            "RestSharp": {
+            "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[111.2.0, )"
+              "version": "[6.6.1, )"
             },
-            "RestSharp.Serializers.NewtonsoftJson": {
+            "Swashbuckle.AspNetCore.Swagger": {
               "target": "Package",
-              "version": "[111.2.0, )"
+              "version": "[6.6.1, )"
             }
           },
           "imports": [
@@ -73,11 +168,14 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

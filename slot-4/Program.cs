@@ -15,6 +15,13 @@ namespace slot_4
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            //builder.Services.AddCors(policy =>
+            //{
+            //    policy.AddPolicy("OpenCorsPolicy", opt =>
+            //        opt.AllowAnyOrigin()
+            //            .AllowAnyHeader()
+            //            .AllowAnyMethod());
+            //});
 
             var app = builder.Build();
 
@@ -25,6 +32,7 @@ namespace slot_4
                 app.UseSwaggerUI();
             }
 
+            //app.UseCors("OpenCorsPolicy");
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
