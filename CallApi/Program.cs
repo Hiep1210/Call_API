@@ -13,7 +13,8 @@ namespace CallApi
             ServiceStackMethod servicestack = new ServiceStackMethod();
             int id;
             string name;
-            while(true)
+            WebClientMethod webClient = new WebClientMethod();
+            while (true)
             {
                 Console.WriteLine("1. Show List Category");
                 Console.WriteLine("2. Search");
@@ -21,7 +22,7 @@ namespace CallApi
                 Console.WriteLine("4. Update");
                 Console.WriteLine("5. Delete");
                 Console.WriteLine("6. Exit");
-                Console.WriteLine("Amongus: ");
+                Console.WriteLine("Choose your way: ");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -31,6 +32,9 @@ namespace CallApi
                         //await flurl.ShowList();
                         //await refit.getAllCategories();
                         await servicestack.getAllCategories();
+                        //Console.WriteLine("List of categories");
+                        //await webClient.GetCategoriesList();
+                        // await flurl.ShowList();
                         break;
                     case 2:
                         Console.WriteLine("Enter Category's ID");
@@ -54,14 +58,18 @@ namespace CallApi
                         name = Console.ReadLine();
                         //await refit.UpdateCategory(id, name);
                         await servicestack.UpdateCategory(id, name);
+                        //Console.WriteLine("Input Category");
+                        //await webClient.UpdateCategory();
                         break;
                     case 5:
                         Console.WriteLine("Enter Category's ID");
                         //await m.DeleteAsync(Convert.ToInt32(Console.ReadLine()));
                         await refit.DeleteCategory(Convert.ToInt32(Console.ReadLine()));
+                        //Console.WriteLine("Input Category");
+                        //await webClient.DeleteCategory();
                         break;
                     case 6:
-                       
+
                         break;
                     default:
                         Console.WriteLine("Nothing");

@@ -87,7 +87,7 @@ namespace slot_4.Controllers
 
         // api/delete/id
 
-        [HttpDelete("id")]
+        [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
             var c = list
