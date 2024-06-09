@@ -56,8 +56,7 @@ public class RefitMethod
             CategoryName = cateName
         };
         var mess = await CateData.UpdateCategory(cate);
-        Category c = JsonConvert.DeserializeObject<Category>(mess);
-        Console.WriteLine(c);
+        Console.WriteLine(mess);
 
     }
 

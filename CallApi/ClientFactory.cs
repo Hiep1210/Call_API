@@ -68,7 +68,7 @@ namespace CallApi
         }
         internal async Task Delete(int id)
         {
-            var response = await _httpClient.DeleteAsync(link + "/Category/id?id=" + id);
+            var response = await _httpClient.DeleteAsync(link + "/Category/" + id);
             response.EnsureSuccessStatusCode();
             string json = await response.Content.ReadAsStringAsync();
             Category Categories = JsonConvert.DeserializeObject<Category>(json);

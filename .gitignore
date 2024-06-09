@@ -396,3 +396,22 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+CallApi/bin/Debug/net6.0/CallApi.dll
+
+CallApi/bin/Debug/net6.0/CallApi.exe
+
+CallApi/ICategoryData.cs
+
+CallApi/obj/Debug/net6.0/apphost.exe
+
+CallApi/obj/Debug/net6.0/CallApi.dll
+
+CallApi/obj/Debug/net6.0/CallApi.sourcelink.json
+
+CallApi/obj/Debug/net6.0/ref/CallApi.dll
+
+CallApi/obj/Debug/net6.0/refint/CallApi.dll
+
+CallApi/obj/Debug/net6.0/CallApi.csproj.CoreCompileInputs.cache
+
+CallApi/obj/Debug/net6.0/CallApi.csproj.FileListAbsolute.txt
