@@ -12,6 +12,8 @@ public class ServiceStackMethod
     JsonServiceClient client;
     public ServiceStackMethod()
     {
+        JsConfig<Category>.RawSerializeFn = cate => JsonConvert.SerializeObject(cate);
+        JsConfig<Category>.RawDeserializeFn = json => JsonConvert.DeserializeObject<Category>(json);
         client = new JsonServiceClient(link);
 
     }
@@ -24,7 +26,7 @@ public class ServiceStackMethod
 
     public async Task GetCategory(int id)
     {
-        List<Category> response = await client.GetAsync<List<Category>>("/"+id);
+        List<Category> response = await client.GetAsync<List<Category>>("/" + id);
         Display(response.ToArray());
     }
 
@@ -47,7 +49,7 @@ public class ServiceStackMethod
 
     public async Task DeleteCategory(int id)
     {
-        Category response = await client.DeleteAsync<Category>("/"+id);
+        Category response = await client.DeleteAsync<Category>("/" + id);
         Display(response);
     }
 
