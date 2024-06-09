@@ -11,13 +11,17 @@ public class RefitMethod
     private JsonSerializer serializer;
     public RefitMethod()
     {
-        CateData = RestService.For<ICategoryData>(link);
+        CateData = RestService.For<ICategoryData>(link, new RefitSettings
+        {
+            ContentSerializer = new NewtonsoftJsonContentSerializer(new JsonSerializerSettings())
+        });
         serializer = new Newtonsoft.Json.JsonSerializer();
     }
     public async Task getAllCategories()
     {
 
         List<Category> Categories =  await CateData.GetCategories();
+        //List<Category> cates = serializer.Deserialize<List<Category>>(new JsonTextReader(new StringReader(strCate)));
         Display(Categories.ToArray());
     }
 
