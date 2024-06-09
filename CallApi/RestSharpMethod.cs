@@ -15,21 +15,13 @@ namespace CallApi
     internal class RestSharpMethod
     {
         private static string link = "http://localhost:5000/api";
-        static RestClientOptions options = new RestClientOptions(link)
-        {
-            Authenticator = new HttpBasicAuthenticator("username", "password")
-        };
-        static RestClient client = new RestClient(options);
         internal async Task ShowList()
         {
-            try { 
-            
-                
-
-                var request = new RestRequest("/Category");
-
-                var timeline = await client.GetAsync<List<Category>>(request);
-                Display(timeline);
+            try
+            {
+                var client = new RestClient(configureSerialization: s => s.UseNewtonsoftJson());
+                List<Category> res = await client.GetJsonAsync<List<Category>>(link + "/Category");
+                Display(res);
             }
             catch (Exception ex)
             {

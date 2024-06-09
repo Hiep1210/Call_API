@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Ki_8\\PRN231\\Call_API_Method\\CallApi\\CallApi.csproj": {}
+    "D:\\abc\\Call_API\\CallApi\\CallApi.csproj": {}
   },
   "projects": {
-    "D:\\Ki_8\\PRN231\\Call_API_Method\\CallApi\\CallApi.csproj": {
+    "D:\\abc\\Call_API\\CallApi\\CallApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Ki_8\\PRN231\\Call_API_Method\\CallApi\\CallApi.csproj",
+        "projectUniqueName": "D:\\abc\\Call_API\\CallApi\\CallApi.csproj",
         "projectName": "CallApi",
-        "projectPath": "D:\\Ki_8\\PRN231\\Call_API_Method\\CallApi\\CallApi.csproj",
+        "projectPath": "D:\\abc\\Call_API\\CallApi\\CallApi.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Ki_8\\PRN231\\Call_API_Method\\CallApi\\obj\\",
+        "outputPath": "D:\\abc\\Call_API\\CallApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
