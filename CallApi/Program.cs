@@ -88,7 +88,7 @@ namespace CallApi
                         //await servicestack.UpdateCategory(id, name);
                         await myApiService.Update(id, name);
 
-                        await servicestack.UpdateCategory(id, name);
+                        // await servicestack.UpdateCategory(id, name);
                         //Console.WriteLine("Input Category");
                         //await webClient.UpdateCategory();
 
@@ -100,7 +100,7 @@ namespace CallApi
                         //await refit.DeleteCategory(Convert.ToInt32(Console.ReadLine()));
                         await myApiService.Delete(Convert.ToInt32(Console.ReadLine()));
 
-                        await refit.DeleteCategory(Convert.ToInt32(Console.ReadLine()));
+                        //await refit.DeleteCategory(Convert.ToInt32(Console.ReadLine()));
                         //Console.WriteLine("Input Category");
                         //await webClient.DeleteCategory();
 
