@@ -1,4 +1,6 @@
-﻿using slot_4.Models;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using slot_4.Models;
 
 namespace CallApi
 {
@@ -11,9 +13,24 @@ namespace CallApi
             FlurlMethod flurl = new FlurlMethod();
             RefitMethod refit = new RefitMethod();
             ServiceStackMethod servicestack = new ServiceStackMethod();
+
+
+            var host = Host.CreateDefaultBuilder()
+                 .ConfigureServices((context, services) =>
+                 {
+                     // Đăng ký HttpClientFactory
+                     services.AddHttpClient();
+                     // Đăng ký MyApiService
+                     services.AddTransient<ClientFactory>();
+                 })
+                 .Build();
+
+            // Lấy MyApiService từ DI container
+            var myApiService = host.Services.GetRequiredService<ClientFactory>();
+
             int id;
             string name;
-            while(true)
+            while (true)
             {
                 Console.WriteLine("1. Show List Category");
                 Console.WriteLine("2. Search");
@@ -30,13 +47,15 @@ namespace CallApi
                         //await rest.ShowList();
                         //await flurl.ShowList();
                         //await refit.getAllCategories();
-                        await servicestack.getAllCategories();
+                        //await servicestack.getAllCategories();
+                        await myApiService.GetAllList();
                         break;
                     case 2:
                         Console.WriteLine("Enter Category's ID");
                         //await m.SearchAsync(Convert.ToInt32(Console.ReadLine()));
                         //await flurl.Show(Convert.ToInt32(Console.ReadLine()));
-                        await refit.GetCategory(Convert.ToInt32(Console.ReadLine()));
+                        //await refit.GetCategory(Convert.ToInt32(Console.ReadLine()));
+                        await myApiService.ShowcateById(Convert.ToInt32(Console.ReadLine()));
                         break;
                     case 3:
 
@@ -45,7 +64,8 @@ namespace CallApi
                         //await rest.Post(new Category {CategoryName = Console.ReadLine() });
                         //await flurl.Add(new Category { CategoryName = Console.ReadLine() });
                         //await refit.CreateCategory(new Category { CategoryName = Console.ReadLine() });
-                        await servicestack.CreateCategory(new Category { CategoryName = Console.ReadLine() });
+                        //await servicestack.CreateCategory(new Category { CategoryName = Console.ReadLine() });
+                        await myApiService.Insert(new Category { CategoryName = Console.ReadLine() });
                         break;
                     case 4:
                         Console.Write("Enter category id: ");
@@ -53,15 +73,17 @@ namespace CallApi
                         Console.Write("Enter category Name: ");
                         name = Console.ReadLine();
                         //await refit.UpdateCategory(id, name);
-                        await servicestack.UpdateCategory(id, name);
+                        //await servicestack.UpdateCategory(id, name);
+                        await myApiService.Update(id, name);
                         break;
                     case 5:
                         Console.WriteLine("Enter Category's ID");
                         //await m.DeleteAsync(Convert.ToInt32(Console.ReadLine()));
-                        await refit.DeleteCategory(Convert.ToInt32(Console.ReadLine()));
+                        //await refit.DeleteCategory(Convert.ToInt32(Console.ReadLine()));
+                        await myApiService.Delete(Convert.ToInt32(Console.ReadLine()));
                         break;
                     case 6:
-                       
+
                         break;
                     default:
                         Console.WriteLine("Nothing");
